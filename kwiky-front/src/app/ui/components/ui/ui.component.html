@@ -1,0 +1,35 @@
+<div class="d-flex flex-column ui">
+  <header>
+    <ng-content select=".tr-header"></ng-content>
+    <span (click)="toggle()">
+      <!--Syntaxe if + if-->
+      <ng-content *ngIf="close" select=".tr-button-open"></ng-content>
+      <ng-content *ngIf="!close" select=".tr-button-close"></ng-content>
+      <!-- syntaxe ngif then else -->
+      <!-- <ng-container *ngIf="close; then thenBlock else elseBlock"></ng-container>
+
+      <ng-template #thenBlock>
+        <ng-content select=".tr-open"></ng-content>
+      </ng-template>
+
+      <ng-template #elseBlock>
+        <ng-content select=".tr-close"></ng-content>
+      </ng-template> -->
+    </span>
+  </header>
+  <main class="d-flex flex-grow-1">
+    <aside [ngClass]="{'close-aside': close}">
+      <nav>
+        <ng-content select=".tr-nav"></ng-content>
+      </nav>
+    </aside>
+    <div class="d-flex flex-column flex-grow-1">
+      <div class="flex-grow-1 content">
+        <ng-content select=".tr-content"></ng-content>
+      </div>
+      <footer>
+        <ng-content select=".tr-footer"></ng-content>
+      </footer>
+    </div>
+  </main>
+</div>

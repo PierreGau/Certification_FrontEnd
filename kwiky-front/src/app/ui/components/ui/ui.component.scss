@@ -1,0 +1,29 @@
+.ui
+{
+  height:100vh;
+}
+header
+{
+  background:var(--app-darklight);
+}
+.content
+{
+  background: var(--app-light);
+}
+
+aside
+{
+  width: 250px;
+  background:var(--app-dark);
+  transition: 0.25s;
+}
+
+footer{
+  background: var(--app-darklight2);
+}
+
+.close-aside
+{
+  width:0px;
+}
+

@@ -10,14 +10,16 @@ import { User } from '../models/user';
 export class UsersService {
   private urlApi: string;
   public users$: Observable<User[]>;
-  private userId: number;
+  public userId: number;
   public currentUser$: Observable<User>;
 
   constructor(private httpClient: HttpClient) {
     this.urlApi = environment.urlApi;
     this.users$ = this.httpClient.get<User[]>(`${this.urlApi}/users`);
-    this.userId = 1;
-    this.currentUser$ = this.httpClient.get<User>(`${this.urlApi}/user/${this.userId}`);
+    this.userId = 5;
+    this.currentUser$ = this.httpClient.get<User>(
+      `${this.urlApi}/user/${this.userId}`
+    );
   }
 
   public changeUser(newUser: number) {

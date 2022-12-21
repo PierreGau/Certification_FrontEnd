@@ -2,17 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TemplatesModule } from '../templates/templates.module';
 import { IconsModule } from '../icons/icons.module';
+import { RouterModule } from '@angular/router';
+import { BtnComponent } from './components/btn/btn.component';
+import { TableLightComponent } from './components/table-light/table-light.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [BtnComponent, TableLightComponent],
   imports: [
-    CommonModule
+    CommonModule, RouterModule
   ],
   exports:[
     TemplatesModule,
-    IconsModule
+    IconsModule,
+    BtnComponent,
+    TableLightComponent
   ]
 })
 export class SharedModule { }

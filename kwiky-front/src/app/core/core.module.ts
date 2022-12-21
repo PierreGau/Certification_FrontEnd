@@ -20,6 +20,7 @@ import { LoginModule } from '../login/login.module';
     HeaderComponent,
     FooterComponent,
     NavComponent,
+    LoginModule
   ],
 })
 export class CoreModule {}

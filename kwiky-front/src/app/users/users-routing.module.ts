@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PageAddUserComponent } from './pages/page-add-user/page-add-user.component';
+import { PageEditUserComponent } from './pages/page-edit-user/page-edit-user.component';
+import { PageListUsersComponent } from './pages/page-list-users/page-list-users.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  // users/
+  {path: '', component: PageListUsersComponent},
+  // users/add
+  {path: 'add', component: PageAddUserComponent},
+  // users/edit
+  {path: 'edit', component: PageEditUserComponent}
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

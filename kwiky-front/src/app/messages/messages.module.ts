@@ -5,6 +5,7 @@ import { MessagesRoutingModule } from './messages-routing.module';
 import { PageAddMessagesComponent } from './pages/page-add-messages/page-add-messages.component';
 import { PageEditMessagesComponent } from './pages/page-edit-messages/page-edit-messages.component';
 import { PageListMessagesComponent } from './pages/page-list-messages/page-list-messages.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PageListMessagesComponent } from './pages/page-list-messages/page-list-
   ],
   imports: [
     CommonModule,
-    MessagesRoutingModule
+    MessagesRoutingModule,
+    SharedModule
   ]
 })
 export class MessagesModule { }

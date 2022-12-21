@@ -6,6 +6,7 @@ import { PageListUsersComponent } from './pages/page-list-users/page-list-users.
 
 import { PageAddUserComponent } from './pages/page-add-user/page-add-user.component';
 import { PageEditUserComponent } from './pages/page-edit-user/page-edit-user.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PageEditUserComponent } from './pages/page-edit-user/page-edit-user.com
   ],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    SharedModule
   ]
 })
 export class UsersModule { }

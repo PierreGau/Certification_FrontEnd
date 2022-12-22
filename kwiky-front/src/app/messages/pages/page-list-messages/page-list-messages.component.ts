@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Canal } from 'src/app/core/models/canal';
 import { CanauxService } from 'src/app/core/services/canaux.service';
+import { UsersService } from 'src/app/core/services/users.service';
 
 @Component({
   selector: 'app-page-list-messages',
@@ -10,9 +11,14 @@ import { CanauxService } from 'src/app/core/services/canaux.service';
 })
 export class PageListMessagesComponent {
   public channel$!: Subject<Canal>;
+  public currentUser: number;
 
-  constructor(private canauxService: CanauxService) {
+  constructor(
+    private canauxService: CanauxService,
+    private usersService: UsersService
+  ) {
     this.channel$ = this.canauxService.selectedChannel$;
+    this.currentUser = this.usersService.userId;
   }
 
   // public selectCanal(channelId:number){

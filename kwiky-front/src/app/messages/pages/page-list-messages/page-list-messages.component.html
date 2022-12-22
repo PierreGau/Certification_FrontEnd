@@ -1,8 +1,9 @@
 <app-template-full-width *ngIf="channel$ |async as messages" [title]="messages.name">
 
   <div class="box">
-    <div>
-      <p ngClass="" *ngFor="let message of messages.messages">{{ message.content }}</p>
+    <div [ngClass]="{'my-message': message.user.id == currentUser}" *ngFor="let message of messages.messages">
+      <span class="messageHeader">{{message.user.name}} - {{message.postTime}}</span>
+      <p>{{ message.content }}</p>
     </div>
   </div>
 </app-template-full-width>

@@ -1,18 +1,17 @@
 <app-template-full-width title="Page de connexion">
-  <h4>Binevenue sur Kwiky</h4>
+  <h4>Bienvenue sur Kwiky</h4>
   <article> Pour accéder à notre service de messagerie en ligne, merci de vous connecter ci-dessous.</article>
 
   <div class="box">
     <h6>Qui êtes-vous ?</h6>
 
     <div *ngIf="users$ | async as users">
-      <select>
-        <option *ngFor="let user of users">{{ user.name }}</option>
+      <select #select name="select-user" id="" actif="" (change)="selectChange()">
+        <option [value]="user.id" *ngFor="let user of users">{{ user.name }}</option>
       </select>
+      <app-btn class="btn-connect" route="../messages" label="Se connecter"></app-btn>
+
     </div>
-    <app-btn (click)="selectUser(3)" class="btn-connect" route="../messages" label="Se connecter"></app-btn>
+
   </div>
-
-
 </app-template-full-width>
-

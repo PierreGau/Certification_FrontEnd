@@ -1,7 +1,6 @@
 <div class="d-flex flex-column ui">
   <header>
     <ng-content select=".tr-header"></ng-content>
-    <div *ngIf="['/sign-in'] "></div>
     <span (click)="toggle()">
       <!--Syntaxe if + if-->
       <ng-content *ngIf="!close" select=".tr-button-close"></ng-content>

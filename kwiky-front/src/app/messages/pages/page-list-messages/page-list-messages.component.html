@@ -1,16 +1,8 @@
-<app-template-full-width title="Votre messagerie">
+<app-template-full-width *ngIf="channel$ |async as messages" [title]="messages.name">
 
   <div class="box">
-    <div *ngIf="channels$ | async as channels ">
-      <select>
-        <option *ngFor="let channel of channels">{{ channel.name }}</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="box">
-    <div *ngIf="listMessages$ |async as messages">
-      <p *ngFor="let message of messages">{{ message.content }}</p>
+    <div>
+      <p ngClass="" *ngFor="let message of messages.messages">{{ message.content }}</p>
     </div>
   </div>
 </app-template-full-width>

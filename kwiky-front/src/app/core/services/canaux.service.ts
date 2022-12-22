@@ -13,7 +13,7 @@ export class CanauxService {
   private urlApi: string;
   public myChannels$: Observable<Canal[]>;
   public channels$: Observable<Canal[]>;
-  public selectedChannel: Subject<Canal>;
+  public selectedChannel$: Subject<Canal>;
   public listMessages$: Observable<Message[]>;
 
   constructor(
@@ -25,12 +25,16 @@ export class CanauxService {
       `${this.urlApi}/servers/canaux/${this.usersService.userId}`
     );
     this.channels$ = this.httpClient.get<Canal[]>(`${this.urlApi}/canaux`);
-    this.selectedChannel = new Subject<Canal>();
+    this.selectedChannel$ = new Subject<Canal>();
 
-    this.listMessages$ = this.httpClient.get<Message[]>(`${this.urlApi}/messages/`);
+    this.listMessages$ = this.httpClient.get<Message[]>(
+      `${this.urlApi}/messages/`
+    );
   }
 
-  public selectChannel(channel: Canal): void {
-    this.selectedChannel.next(channel);
+  public selectChannel(canal: Canal): void {
+    this.httpClient
+      .get<Canal>(`${this.urlApi}/canaux/${canal.id}`)
+      .subscribe((data) => this.selectedChannel$.next(data));
   }
 }

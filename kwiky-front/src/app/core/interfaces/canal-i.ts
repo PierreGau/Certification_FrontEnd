@@ -3,7 +3,7 @@ import { User } from '../models/user';
 
 export interface CanalI {
   id: number;
-  name: Text;
+  name: string;
   user: User;
   general: boolean;
   messages: Message[];

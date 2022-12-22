@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Canal } from 'src/app/core/models/canal';
-import { Message } from 'src/app/core/models/message';
 import { CanauxService } from 'src/app/core/services/canaux.service';
 
 @Component({
   selector: 'app-page-list-messages',
   templateUrl: './page-list-messages.component.html',
-  styleUrls: ['./page-list-messages.component.scss']
+  styleUrls: ['./page-list-messages.component.scss'],
 })
 export class PageListMessagesComponent {
-  public channels$!: Observable<Canal[]>;
-  public listMessages$!: Observable<Message[]>
+  public channel$!: Subject<Canal>;
 
-  constructor(private canauxService : CanauxService){
-    this.channels$ = this.canauxService.channels$;
-    this.listMessages$ = this.canauxService.listMessages$;
+  constructor(private canauxService: CanauxService) {
+    this.channel$ = this.canauxService.selectedChannel$;
   }
 
   // public selectCanal(channelId:number){

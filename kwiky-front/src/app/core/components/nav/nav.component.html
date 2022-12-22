@@ -6,10 +6,9 @@
     <ng-template ngbPanelContent>
       <ul>
         <li class="nav-item" *ngFor="let channel of server.canaux">
-          <a class="nav-link" routerLink="/{{ server.name}}/{{ channel.name }}">
+          <a class="nav-link" routerLink="/messages">
             {{ channel.name }}
           </a>
-
         </li>
       </ul>
     </ng-template>

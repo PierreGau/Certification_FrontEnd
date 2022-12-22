@@ -9,7 +9,7 @@
     <form class="flex-grow-1" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="content"></label>
-        <input type="text" class="form-control" id="content" placeholder="enter text...">
+        <input type="text" class="form-control" formControlName="content" id="content" placeholder="enter text...">
       </div>
       <app-btn class="my-button" label="submit" type="submit">Send</app-btn>
     </form>

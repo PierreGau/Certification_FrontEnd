@@ -1,8 +1,8 @@
-import { User } from "../models/user";
+import { User } from '../models/user';
 
 export interface MessageI {
   id: number;
-  content: Text;
+  content: string;
   postTime: Date;
   editTime: Date;
   user: User;

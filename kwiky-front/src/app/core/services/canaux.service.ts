@@ -15,6 +15,7 @@ export class CanauxService {
   public channels$: Observable<Canal[]>;
   public selectedChannel$: Subject<Canal>;
   public listMessages$: Observable<Message[]>;
+  private chanelId!: number;
 
   constructor(
     private httpClient: HttpClient,
@@ -36,5 +37,15 @@ export class CanauxService {
     this.httpClient
       .get<Canal>(`${this.urlApi}/canaux/${canal.id}`)
       .subscribe((data) => this.selectedChannel$.next(data));
+
+    this.chanelId = canal.id;
+  }
+
+  public postMessage(msg: Message): void {
+    console.log(msg.content);
+    console.log(msg.user.id);
+    this.httpClient
+      .post<Message>(`${this.urlApi}/message/${this.chanelId}`, msg)
+      .subscribe();
   }
 }

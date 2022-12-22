@@ -20,7 +20,7 @@ import { NavComponent } from './components/nav/nav.component';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    LoginModule,
+    LoginModule
   ],
 })
 export class CoreModule {}

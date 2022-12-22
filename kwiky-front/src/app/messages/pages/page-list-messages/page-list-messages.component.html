@@ -1,9 +1,17 @@
 <app-template-full-width *ngIf="channel$ |async as messages" [title]="messages.name">
-
-  <div class="box">
-    <div [ngClass]="{'my-message': message.user.id == currentUser}" *ngFor="let message of messages.messages">
-      <span class="messageHeader">{{message.user.name}} - {{message.postTime}}</span>
-      <p>{{ message.content }}</p>
+  <div class="d-flex flex-column messages-box">
+    <div class="box flex-grow-1">
+      <div [ngClass]="{'my-message': message.user.id == currentUser}" *ngFor="let message of messages.messages">
+        <span class="messageHeader">{{message.user.name}} - {{message.postTime}}</span>
+        <p>{{ message.content }}</p>
+      </div>
     </div>
+    <form class="flex-grow-1" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="content"></label>
+        <input type="text" class="form-control" id="content" placeholder="enter text...">
+      </div>
+      <app-btn class="my-button" label="submit" type="submit">Send</app-btn>
+    </form>
   </div>
 </app-template-full-width>

@@ -14,4 +14,8 @@ export class PageSignInComponent {
   constructor(private usersService : UsersService){
     this.users$ = this.usersService.users$;
   }
+
+  public selectUser(userId:number){
+    this.usersService.changeUser(userId);
+  }
 }

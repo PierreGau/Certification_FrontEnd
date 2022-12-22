@@ -10,7 +10,7 @@
         <option *ngFor="let user of users">{{ user.name }}</option>
       </select>
     </div>
-    <app-btn class="btn-connect" route="../messages" label="Se connecter"></app-btn>
+    <app-btn (click)="selectUser(3)" class="btn-connect" route="../messages" label="Se connecter"></app-btn>
   </div>
 
 

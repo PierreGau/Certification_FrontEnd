@@ -16,7 +16,7 @@ export class UsersService {
   constructor(private httpClient: HttpClient) {
     this.urlApi = environment.urlApi;
     this.users$ = this.httpClient.get<User[]>(`${this.urlApi}/users`);
-    this.userId = 5;
+    this.userId = 3;
     this.currentUser$ = this.httpClient.get<User>(
       `${this.urlApi}/user/${this.userId}`
     );

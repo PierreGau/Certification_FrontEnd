@@ -1,0 +1,15 @@
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+  <ngb-panel *ngFor="let server of servers">
+    <ng-template ngbPanelTitle>
+      {{ server.name }}
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <ul>
+        <li *ngFor="let channel of server.canaux">
+          {{ channel.name }}
+
+        </li>
+      </ul>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

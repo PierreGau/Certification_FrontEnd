@@ -12,12 +12,13 @@ export class NavComponent {
   public servers$: Observable<Server[]>;
   public currentServer!: Server;
   public activePanelId!: string;
+
   servers: any[] = [];
   openState: { [key: string]: boolean } = {};
 
   constructor(private serversService: ServersService) {
     this.servers$ = serversService.myServers$;
-    serversService.selectedServer.subscribe(
+    serversService.selectedServer$.subscribe(
       (data) => (this.currentServer = data)
     );
   }
@@ -34,6 +35,7 @@ export class NavComponent {
 
   toggleOpen(server: any) {
     this.openState[server.name] = !this.openState[server.name];
+    console.log('oui');
   }
 
   public selectServer(server: Server): void {

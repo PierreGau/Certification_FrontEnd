@@ -1,5 +1,5 @@
 <div class="d-flex">
   <img src="./assets/images/kwiky-logo.png" alt="Kwiky-logo" class="logo">
   <h1 class="titre">KWIKY</h1>
-  <p class="user">Utilisateur actuel : {{ user.name }}</p>
+  <p class="user" *ngIf="user$ |async as user">Utilisateur actuel : {{ user.name }}</p>
 </div>

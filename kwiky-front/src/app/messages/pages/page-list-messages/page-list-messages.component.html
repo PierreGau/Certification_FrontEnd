@@ -1,1 +1,16 @@
-<p>page-list-messages works!</p>
+<app-template-full-width title="Votre messagerie">
+
+  <div class="box">
+    <div *ngIf="channels$ | async as channels ">
+      <select>
+        <option *ngFor="let channel of channels">{{ channel.name }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="box">
+    <div *ngIf="listMessages$ |async as messages">
+      <p *ngFor="let message of messages">{{ message.content }}</p>
+    </div>
+  </div>
+</app-template-full-width>

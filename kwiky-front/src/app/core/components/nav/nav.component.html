@@ -5,8 +5,11 @@
     </ng-template>
     <ng-template ngbPanelContent>
       <ul>
-        <li *ngFor="let channel of server.canaux">
-          {{ channel.name }}
+        <li class="nav-item" *ngFor="let channel of server.canaux">
+          <a class="nav-link" routerLink="/{{ server.name}}/{{ channel.name }}">
+            {{ channel.name }}
+          </a>
+
         </li>
       </ul>
     </ng-template>

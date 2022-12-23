@@ -4,7 +4,12 @@
   margin: auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  background-color: #ada7a7;
-  box-shadow: 0px 3px 20px rgb(2,2,2);  padding: 30px;
+  background-color: var(--box-color);
+  box-shadow: var(--box-shadow);
+  padding: 30px;
   border-radius: 9px;
+}
+
+h4, article, h6{
+  color: var(--text-color);
 }

@@ -4,22 +4,22 @@
 }
 header
 {
-  background:var(--app-darklight);
+  background:var(--background-color);
 }
 .content
 {
-  background: var(--app-light);
+  background: var(--background-color);
 }
 
 aside
 {
   width: 250px;
-  background:var(--app-dark);
+  background:var(--background-color);
   transition: 0.25s;
 }
 
 footer{
-  background: var(--app-darklight2);
+  background: var(--background-color);
 }
 
 .close-aside

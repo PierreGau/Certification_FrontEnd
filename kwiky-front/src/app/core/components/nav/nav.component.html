@@ -1,13 +1,15 @@
-<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-  <ngb-panel *ngFor="let server of servers" (click)="toggleOpen(server)">
-    <ng-template ngbPanelTitle (click)="toggleOpen(server)">
-      {{ server.name }}
-    </ng-template>
-    <ng-template ngbPanelContent>
-      <div class="nav-item" *ngFor="let channel of server.canaux">
-        <a (click)="selectCanal(channel)" class="nav-link" routerLink="/messages">
-          {{ channel.name }}</a>
-      </div>
-    </ng-template>
-  </ngb-panel>
-</ngb-accordion>
+<div class="">
+  <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
+    <ngb-panel *ngFor="let server of servers" (click)="toggleOpen(server)">
+      <ng-template ngbPanelTitle (click)="toggleOpen(server)">
+        {{ server.name }}
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <div class="nav-item" *ngFor="let channel of server.canaux">
+          <a (click)="selectCanal(channel)" class="nav-link" routerLink="/messages">
+            {{ channel.name }}</a>
+        </div>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+</div>

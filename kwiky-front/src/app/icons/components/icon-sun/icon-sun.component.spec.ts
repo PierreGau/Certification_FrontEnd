@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IconEditComponent } from './icon-edit.component';
+import { IconSunComponent } from './icon-sun.component';
 
-describe('IconEditComponent', () => {
-  let component: IconEditComponent;
-  let fixture: ComponentFixture<IconEditComponent>;
+describe('IconSunComponent', () => {
+  let component: IconSunComponent;
+  let fixture: ComponentFixture<IconSunComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IconEditComponent ]
+      declarations: [ IconSunComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(IconEditComponent);
+    fixture = TestBed.createComponent(IconSunComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
